@@ -136,6 +136,8 @@ namespace GHelper.Input
 
                 hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F14);
                 hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F15);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F21);
+                hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, Keys.F22);
 
                 hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile0);
                 hook.RegisterHotKey(ModifierKeys.Shift | ModifierKeys.Control | ModifierKeys.Alt, keyProfile1);
@@ -469,6 +471,14 @@ namespace GHelper.Input
                     case Keys.F15:
                         Program.toast.RunToast(Properties.Strings.StandardMode);
                         Program.settingsForm.gpuControl.SetGPUMode(AsusACPI.GPUModeStandard);
+                        break;
+                    case Keys.F21:
+                        Program.toast.RunToast("Activating XGM");
+                        Program.settingsForm.gpuControl.ToggleXGM(true);
+                        break;
+                    case Keys.F22:
+                        Program.toast.RunToast("Deactivating XGM");
+                        Program.settingsForm.gpuControl.ToggleXGM(false);
                         break;
                 }
             }
